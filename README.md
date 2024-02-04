@@ -1,3 +1,10 @@
+git clone https://github.com/aadhar54/react-swe-1.git
+cd my-app
+npm install
+npm start
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BreadJam breadColor="brown" jamColor='crimson' />
+    <BreadJam breadColor='brown' jamColor='crimson' textColor='white'/>
   </React.StrictMode>
 );
 
