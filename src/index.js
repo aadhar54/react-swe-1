@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import BreadJam from './BreadJam';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BreadJam breadColor='brown' jamColor='crimson' textColor='white'/>
+    <BreadJam />
+    {/* <App /> */}
   </React.StrictMode>
 );
 

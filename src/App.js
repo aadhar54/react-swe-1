@@ -4,13 +4,24 @@ import CustomComponent from './CustomComponent';
 import {useState} from 'react';
 
 // const fn = function(){
-//   console.log(1+2);
-// }
-
-const App = () => {
-  //let name = 'Bernard'; -> this will not work when we need things to change on the screen. so we use useState hook.
-  const [color, setColor] = useState('green');
-  const [name, setName] = useState('Bernard');
+  //   console.log(1+2);
+  // }
+  
+  const App = () => {
+    //let name = 'Bernard'; -> this will not work when we need things to change on the screen. so we use useState hook.
+    const [color, setColor] = useState('green');
+    const [name, setName] = useState('Bernard');
+    // let clickCount = 0;
+    let [clickCount, setClickCount] = useState(1);
+    
+    function increaseClickCount(){
+      // setClickCount(clickCount + 1);
+      console.log(clickCount);
+      setClickCount((prev) => {
+        return prev + 1;
+      })
+      // console.log(clickCount);
+    }
 
   function makeRequest(){
     if(name === 'Bernard'){
@@ -29,6 +40,7 @@ const App = () => {
       setColor('green');
     }
   }
+
 
   return (
     <div className="App">
@@ -54,6 +66,8 @@ const App = () => {
       </button>
       <p style={{color: color}}>{name.length > 5 ? "Happy Sunday" : "Learning Day"}</p>
       <button onClick={changeColor}>Change Color To {color === 'green' ? 'BLUE' : 'GREEN'}</button>
+      <button onClick={increaseClickCount}>CLICKER</button>
+      <span>{clickCount}</span>
     </div>
   );
 }

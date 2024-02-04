@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 
 function Bread({bgcolor, textColor}){
   const css = {
@@ -12,7 +14,11 @@ function Bread({bgcolor, textColor}){
 
 
 function Jam(props){
-  const css = {backgroundColor: props.bgcolor, color: props.textColor};
+  const css = {
+    backgroundColor: props.bgcolor,
+    color: props.textColor
+  };
+  
   return(
     <h2 style={css}>JAM</h2>
   )
@@ -38,6 +44,19 @@ function BreadJam(props){
       <Bread bgcolor={props.breadColor} textColor={props.textColor}/>
     </>
   )
+}
+
+
+BreadJam.propTypes = {
+  breadColor: PropTypes.string.isRequired,
+  jamColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired
+}
+
+BreadJam.defaultProps = {
+  breadColor: 'brown',
+  jamColor: 'red',
+  textColor: 'yellow'
 }
 
 export default BreadJam;
