@@ -1,14 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
 import CustomComponent from './CustomComponent';
+import {useState} from 'react';
 
-function App() {
+// const fn = function(){
+//   console.log(1+2);
+// }
+
+const App = () => {
+  //let name = 'Bernard'; -> this will not work when we need things to change on the screen. so we use useState hook.
+  const [color, setColor] = useState('green');
+  const [name, setName] = useState('Bernard');
+
+  function makeRequest(){
+    if(name === 'Bernard'){
+      setName('Adi');
+    }else{
+      setName('Bernard');
+    }
+    console.log("This Button is Clicked and hence a request has been made..");
+    console.log('name is ' + name);
+  }
+
+  function changeColor(){
+    if(color === 'green'){
+      setColor('blue');
+    }else{
+      setColor('green');
+    }
+  }
 
   return (
     <div className="App">
       <CustomComponent />
+      <h1>{new Date().toLocaleTimeString()}</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        {/* <p style={{backgroundColor: 'red'}}> */}
         <p>
           Edit <code>src/App.js</code> Hello from KnowledgeHut!
         </p>
@@ -21,8 +49,44 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={makeRequest}>
+        {name}
+      </button>
+      <p style={{color: color}}>{name.length > 5 ? "Happy Sunday" : "Learning Day"}</p>
+      <button onClick={changeColor}>Change Color To {color === 'green' ? 'BLUE' : 'GREEN'}</button>
     </div>
   );
 }
 
 export default App;
+
+
+// import './App.css';
+
+// function One(){
+//   return (<h1>One</h1>);
+// }
+
+// function Two(){
+//   return (<h2>Two</h2>)
+// }
+
+// function Three(){
+//   return (<h3>Three</h3>)
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <Two />
+//       <One />
+//       <Three />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+

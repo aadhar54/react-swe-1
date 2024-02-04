@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+div h1{
+  color: darkorange;
+}
+
+div h2{
+  color: skyblue;
+}
+
+div h3{
+  color: greenyellow;
+}
